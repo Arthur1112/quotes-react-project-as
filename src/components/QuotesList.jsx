@@ -17,13 +17,19 @@ function QuotesList() {
             <h2>Loading Quotes...</h2>
           ) : (
             quotes.map((quote) => (
-              <Col style={{ width: "300px", margin: "1em" }} key={quote.id}>
+              <Col style={{ 
+                display: 'grid',
+                justifyContent: 'center',
+                alignContent: 'center',
+                width: "300px", 
+                margin: "1em"
+                }} key={quote.id}>
                 <Card
                   style={{
                     borderStyle: "solid",
-                    backgroundColor: "red",
+                    backgroundColor: "rgba(225, 225, 225, 0.6)",
                     borderRadius: "15px",
-                    padding: "10px",
+                    padding: "15px",
                   }}
                   title={quote.author}
                 >

@@ -1,10 +1,24 @@
 body {
-  background-color: aquamarine;
+  background-image: url('https://cdn.wallpapersafari.com/27/82/phLbUI.jpg');
 }
 
 .site-card-border-less-wrapper {
-  padding: 30px;
-  background: #ececec;
-  margin: 30px;
-  gap: 20px;
+  display: flex;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.317);
+  border: 1px solid rgb(120, 91, 18);
+  color: black;
+  /* margin: 1px; */
+}
+
+.site-page-header {
+  border: 1px solid rgb(120, 91, 18);
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  font-weight: bolder;
+  color: goldenrod;
+  padding: 10px;
+  font-family: cursive;
+  font-size: xx-large;
 }
