@@ -1,8 +1,8 @@
 import { useState } from "react"
-// import { useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 export default function AddQuote () {
-  // let navigate = useNavigate();
+  let navigate = useNavigate();
 
   const [newQuote, setNewQuote] = useState({
     quote: '',
@@ -19,7 +19,7 @@ export default function AddQuote () {
       },
       body: JSON.stringify(newQuote)
     })
-    .then()
+    .then(() => navigate('/'))
     .catch(setError)
   }
 
