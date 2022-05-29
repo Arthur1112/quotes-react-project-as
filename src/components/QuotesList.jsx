@@ -18,7 +18,7 @@ function QuotesList() {
           : (
             quotes.map((quote) => (
               <Col className="column" key={quote.id}>
-                <Card className="card" key={quote.id} title={quote.author}>
+                <Card headStyle={{color: 'rgb(120, 91, 18)', borderColor: 'rgb(120, 91, 18)' }} className="card" key={quote.id} title={quote.author}>
                   <p>{quote.quote}</p>
                 </Card>
               </Col>
