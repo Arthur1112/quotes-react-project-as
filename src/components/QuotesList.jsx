@@ -14,7 +14,7 @@ function QuotesList() {
       <div className="site-card-border-less-wrapper">
         <Row>
           {!quotes 
-          ? (<h2>Loading Quotes...</h2>) 
+          ? (<h2 style={{color: 'white'}}>Loading Quotes...</h2>) 
           : (
             quotes.map((quote) => (
               <Col className="column" key={quote.id}>
