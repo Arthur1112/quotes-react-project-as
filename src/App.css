@@ -70,7 +70,7 @@ body {
 
 .column {
     display: grid;
-    width: 480px; 
+    width: 800px; 
     margin: auto;
     padding: 1em;
 }
