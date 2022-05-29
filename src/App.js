@@ -18,9 +18,8 @@ function App() {
           <Menubar/>
         </Header>
         <Content>
-          <AddQuoteTwo/>
           <Routes>
-            <Route path='/quotes/addQuote' element={<AddQuote/>} />
+            <Route path='/quotes/addQuote' element={<AddQuoteTwo/>} />
             <Route path='/' element={<QuotesList/>} />
           </Routes>
         </Content>
