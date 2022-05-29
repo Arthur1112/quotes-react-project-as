@@ -1,10 +1,9 @@
 import { Layout } from "antd";
 import QuotesList from "./components/QuotesList";
 import './App.css'
-import AddQuote from "./components/AddQuotes";
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import Menubar from "./components/MenuBar";
-import AddQuoteTwo from "./components/2AddQuotes";
+import AddQuote from "./components/AddQuotes";
 
 
 const {Header, Content} = Layout;
@@ -19,7 +18,7 @@ function App() {
         </Header>
         <Content>
           <Routes>
-            <Route path='/quotes/addQuote' element={<AddQuoteTwo/>} />
+            <Route path='/quotes/addQuote' element={<AddQuote/>} />
             <Route path='/' element={<QuotesList/>} />
           </Routes>
         </Content>

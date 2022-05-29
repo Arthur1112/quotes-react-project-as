@@ -1,10 +1,10 @@
-import { useState } from "react"
+import { Button, Form, Input } from 'antd';
+import { useState } from 'react';
 import { useNavigate } from "react-router-dom"
-import { Form, Input, Button, Radio } from 'antd';
-import FormItem from "antd/lib/form/FormItem";
 
 
 export default function AddQuote () {
+
   let navigate = useNavigate();
 
   const [newQuote, setNewQuote] = useState({
@@ -15,8 +15,7 @@ export default function AddQuote () {
   const[error, setError] = useState('')
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    fetch('https://quotes-project-as.web.app/quotes', {
+    fetch('https://quotes-project-as.web.app/addNewQuote', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -28,25 +27,42 @@ export default function AddQuote () {
   }
 
   const handleChange = (e) => {
-    setNewQuote(e.target.value)
+    const newValue = (e.target.value)
+  setNewQuote({
+    ...newQuote,
+    [e.target.name]: newValue
+  });
   }
 
-  return(
+  
+
+
+
+  return (
     <section style={{margin: '2em 1em'}}>
-    <h1>Add Restaurant</h1>
-    {error && <h2 style={{color: 'red'}}>{error}</h2>}
-    <Form onSubmit={handleSubmit}>
-      <Form.Item label="Quote:" for='quote'>
-        <Input name="quote" type='text' value={newQuote.quote} onChange={handleChange} />
-      </Form.Item>
-      <br />
-      <Form.Item label="Author:" for='author'>
-        <Input name="author" type='text' value={newQuote.author} onChange={handleChange} />
-      </Form.Item>
-      <Form.Item {...{wrapperCol: { span: 14, offset: 4 }}}>
-        <Button type="primary">Submit</Button>
-      </Form.Item>
-    </Form>
+      <Form
+        style={{
+          wrapperCol: {
+            span: 14,
+            offset: 4,
+          },
+        }}
+        onFinish={handleSubmit}>
+        <Form.Item label="Quote" for="quote">
+          <Input placeholder="input Quote" name="quote" type='text' value={newQuote.quote} onChange={handleChange} />
+        </Form.Item>
+        <Form.Item label="Author" for="author">
+          <Input placeholder="input Author" name="author" type='text' value={newQuote.author} onChange={handleChange} />
+        </Form.Item>
+        <Form.Item 
+          style={{
+            wrapperCol: {
+              span: 14,
+              offset: 4,
+            }}}>
+          <Button type="primary" htmlType='submit'>Submit</Button>
+        </Form.Item>
+      </Form>
     </section>
-  )
-}
+  );
+};
