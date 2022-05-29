@@ -34,7 +34,7 @@ body {
 }
 
 .ant-form {
-  margin: 1em;
+  margin: 4em;
 }
 
 .ant-form-item-label > label {
@@ -70,7 +70,7 @@ body {
 
 .column {
     display: grid;
-    width: 800px; 
+    width: 60%; 
     margin: auto;
     padding: 1em;
 }
