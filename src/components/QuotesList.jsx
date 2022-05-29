@@ -13,26 +13,12 @@ function QuotesList() {
     <>
       <div className="site-card-border-less-wrapper">
         <Row>
-          {!quotes ? (
-            <h2>Loading Quotes...</h2>
-          ) : (
+          {!quotes 
+          ? (<h2>Loading Quotes...</h2>) 
+          : (
             quotes.map((quote) => (
-              <Col style={{ 
-                display: 'grid',
-                justifyContent: 'center',
-                alignContent: 'center',
-                width: "300px", 
-                margin: "1em"
-                }} key={quote.id}>
-                <Card
-                  style={{
-                    borderStyle: "solid",
-                    backgroundColor: "rgba(225, 225, 225, 0.6)",
-                    borderRadius: "15px",
-                    padding: "15px",
-                  }}
-                  title={quote.author}
-                >
+              <Col className="column" key={quote.id}>
+                <Card className="card" key={quote.id} title={quote.author}>
                   <p>{quote.quote}</p>
                 </Card>
               </Col>

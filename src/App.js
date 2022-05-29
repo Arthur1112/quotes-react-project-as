@@ -1,8 +1,10 @@
-import { Layout, PageHeader } from "antd";
+import { Layout } from "antd";
 import QuotesList from "./components/QuotesList";
 import './App.css'
 import AddQuote from "./components/AddQuotes";
-import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
+import { BrowserRouter, Routes, Route} from 'react-router-dom';
+import Menubar from "./components/MenuBar";
+import AddQuoteTwo from "./components/2AddQuotes";
 
 
 const {Header, Content} = Layout;
@@ -11,14 +13,17 @@ const {Header, Content} = Layout;
 function App() {
   return (
     <BrowserRouter>
-      <Layout className="layout">
-        <PageHeader className="site-page-header" title="Motivational Quotes"/>
-        <Routes>
-          <Route>
-          <Route path='/quotes/addQuote' element={<AddQuote/>} />
-          <Route path='/' element={<QuotesList/>} />
-          </Route>
-        </Routes>
+      <Layout className="Layout">
+        <Header>
+          <Menubar/>
+        </Header>
+        <Content>
+          <AddQuoteTwo/>
+          <Routes>
+            <Route path='/quotes/addQuote' element={<AddQuote/>} />
+            <Route path='/' element={<QuotesList/>} />
+          </Routes>
+        </Content>
       </Layout>
     </BrowserRouter>
   );

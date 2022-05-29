@@ -1,5 +1,8 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import { Form, Input, Button, Radio } from 'antd';
+import FormItem from "antd/lib/form/FormItem";
+
 
 export default function AddQuote () {
   let navigate = useNavigate();
@@ -8,6 +11,7 @@ export default function AddQuote () {
     quote: '',
     author: '',
   })
+
   const[error, setError] = useState('')
 
   const handleSubmit = (e) => {
@@ -31,18 +35,18 @@ export default function AddQuote () {
     <section style={{margin: '2em 1em'}}>
     <h1>Add Restaurant</h1>
     {error && <h2 style={{color: 'red'}}>{error}</h2>}
-    <form onSubmit={handleSubmit}>
-      <label for='name'>
-        Quote:
-        <input name="name" type='text' value={newQuote.quote} onChange={handleChange} />
-      </label>
+    <Form onSubmit={handleSubmit}>
+      <Form.Item label="Quote:" for='quote'>
+        <Input name="quote" type='text' value={newQuote.quote} onChange={handleChange} />
+      </Form.Item>
       <br />
-      <label for='address'>
-        Author:
-        <input name="address" type='text' value={newQuote.author} onChange={handleChange} />
-      </label>
-      <button type="submit">Submit</button>
-    </form>
+      <Form.Item label="Author:" for='author'>
+        <Input name="author" type='text' value={newQuote.author} onChange={handleChange} />
+      </Form.Item>
+      <Form.Item {...{wrapperCol: { span: 14, offset: 4 }}}>
+        <Button type="primary">Submit</Button>
+      </Form.Item>
+    </Form>
     </section>
   )
 }
